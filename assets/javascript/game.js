@@ -1,14 +1,33 @@
+var randNum, userTotal;
+var wins = 0, losses = 0;
+
+var checkGameState = function() {
+    // User wins if they hit the random number without going over
+    if (userTotal === randNum) {
+        alert("You Win!");
+        wins++;
+        $("#wins").text(wins);
+    }
+
+    // User loses if they go over the random number
+    if (userTotal > randNum) {
+        alert("You lose!");
+        losses++;
+        $("#losses").text(losses);
+    }
+}
+
 $(document).ready(function() {
     
     // Create random number between 19-120 to be displayed to user
-    var randNum = Math.floor(Math.random() * (120 - 19) + 19);
+    randNum = Math.floor(Math.random() * (120 - 19) + 19);
 
-    console.log(randNum);
+    console.log("randNum is: " + randNum);
 
     $("#random-number").text(randNum);
 
     // Display user's running total from clicking crystals
-    var userTotal = 0;
+    userTotal = 0;
 
     $("#user-number").text(userTotal);
 
@@ -22,36 +41,29 @@ $(document).ready(function() {
         userTotal += blueCryst;
         $("#user-number").text(userTotal);
         console.log("blue: " + blueCryst);
+        checkGameState();
         });
 
     $("#yellowcrystal").on("click", function() { 
         userTotal += yelCryst;
         $("#user-number").text(userTotal);
         console.log("yellow: " + yelCryst);
+        checkGameState();
         });
 
     $("#greencrystal").on("click", function() { 
         userTotal += greenCryst;
         $("#user-number").text(userTotal);
         console.log("green " + greenCryst);
+        checkGameState();
         });
 
     $("#redcrystal").on("click", function() { 
         userTotal += redCryst;
         $("#user-number").text(userTotal);
         console.log("red " + redCryst);
+        console.log("user total: " +userTotal);
+        checkGameState();
         });
-
-    // User wins if they hit the random number without going over
-    if (userTotal === randNum) {
-        alert("You Win!");
-        wins++;
-    }
-
-    // User loses if they go over the random number
-    if (userTotal > randNum) {
-        alert("You lose!");
-    }
-    
-
+  
 });

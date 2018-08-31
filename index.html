@@ -13,29 +13,65 @@
 </head>
 <body>
     <div class="container">
-        <div>
-            <h1>Click a crystal to see how much it's worth!</h1>
+        <div class="title">
+            <h1>CrystalsCollector!</h1>
         </div>
 
-        <div id="random-number"></div>
-
-        <div class="column">
-            <img src="assets\images\bluecrystal.png" alt="Blue Crystal" class="crystal" id="bluecrystal">
+        <div class="instructions">
+            <p>You will be given a random value at the start of each game.</p>
+            <p>There are four crystals below. By clicking on a crystal you will add
+                a specific amount of points to your total score.
+            </p>
+            <p>You win the game by matching your total score to the random number and you 
+                will lose the game if your total score goes above the random number.
+            </p>
+            <p>The value of each crystal is hidddn from you until you click on it
+                and will change at the start of each game.
+            </p>
         </div>
 
-        <div class="column">
-            <img src="assets\images\crystalyellow.jpg" alt="Yellow Crystal" class="crystal" id="yellowcrystal">
+        <div class="row">
+            <div class="random-number">
+                <p>The number you're trying to get is: </p>
+            
+                <div id="random-number"></div>
+            </div>
+
+            <div class="wins-losses">
+                <p>Wins: </p>
+                <div id="wins"></div>
+                <p>Losses: </p>
+                <div id="losses"></div>
+            </div>
         </div>
 
-        <div class="column">
-            <img src="assets\images\greencrystal.jpg" alt="Green Crystal" class="crystal" id="greencrystal">
+        <div class="row">
+
+            <div class="column">
+                <img src="assets\images\bluecrystal.png" alt="Blue Crystal" class="crystal" id="bluecrystal">
+            </div>
+
+            <div class="column">
+                <img src="assets\images\crystalyellow.jpg" alt="Yellow Crystal" class="crystal" id="yellowcrystal">
+            </div>
+
+            <div class="column">
+                <img src="assets\images\greencrystal.jpg" alt="Green Crystal" class="crystal" id="greencrystal">
+            </div>
+            
+            <div class="column">
+                <img src="assets\images\redcrystal.jpg" alt="Red Crystal" class="crystal" id="redcrystal">
+            </div>
+
+        </div>
+
+        <div class="user-number">
+            <p>Your total score is: </p>
+            <div id="user-number"></div>
         </div>
         
-        <div class="column">
-            <img src="assets\images\redcrystal.jpg" alt="Red Crystal" class="crystal" id="redcrystal">
-        </div>
-
-        <div id="user-number"></div>
+            
+        
     </div>
 
 
