@@ -48,6 +48,7 @@ $(document).ready(function() {
 
     $("#user-number").text(userTotal);
 
+    // Combine each of these into one function
     $("#bluecrystal").on("click", function() { 
         userTotal += blueCryst;
         $("#user-number").text(userTotal);
